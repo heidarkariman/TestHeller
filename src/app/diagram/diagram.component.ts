@@ -2,13 +2,20 @@ import { Component, Input } from '@angular/core';
 import { ChartOptions, ChartType } from 'chart.js';
 import { ChartDataset } from 'chart.js';
 import { ChartData } from 'chart.js';
+
 @Component({
   selector: 'app-diagram',
   templateUrl: './diagram.component.html',
   styleUrls: ['./diagram.component.css']
 })
+
 export class DiagramComponent {
   @Input() toolUsageData: any[];
+
+  constructor() {
+    this.toolUsageData = [];
+  }
+
 
   public barChartOptions: ChartOptions = {
     responsive: true,

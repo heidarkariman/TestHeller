@@ -9,14 +9,16 @@ import { DiagramComponent } from '../diagram/diagram.component';
   selector: 'app-dashboard',
   template: `
     <h1>Tool Usage Dashboard</h1>
-    <app-tool-usage [toolUsage]="toolUsage"></app-tool-usage>
-    <app-diagram [toolUsage]="toolUsage"></app-diagram>
+    <app-tool-usage [toolUsageData]="toolUsage"></app-tool-usage>
+    <app-diagram [toolUsageData]="toolUsage"></app-diagram>
   `
 })
 export class DashboardComponent {
   toolUsage: ToolUsage[];
 
-  constructor(private toolUsageService: ToolUsageService) { }
+  constructor(private toolUsageService: ToolUsageService) { 
+    this.toolUsage = [];
+  }
 
   ngOnInit() {
     this.toolUsageService.getToolUsage().subscribe(data => {
