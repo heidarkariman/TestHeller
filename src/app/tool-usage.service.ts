@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ToolUsage } from './tool-usage.model.ts';
+import { ToolUsage } from './tool-usage.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ToolUsageService {
-  private toolUsageUrl = 'assets/tool-usage.json';
+  private toolUsageUrl = './assets/tool-usage.json';
 
   constructor(private http: HttpClient) { }
 
