@@ -1,0 +1,27 @@
+import { Component, Input, ViewChild, AfterViewInit } from '@angular/core';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+
+
+@Component({
+  selector: 'app-tool-usage',
+  templateUrl: './tool-usage.component.html',
+  styleUrls: ['./tool-usage.component.css']
+})
+export class ToolUsageComponent implements AfterViewInit {
+  constructor() {
+    this.toolUsageData = [];
+  }
+
+  @Input() toolUsageData: any[];
+
+  displayedColumns: string[] = ['tool', 'usage'];
+  dataSource: MatTableDataSource<any>;
+
+  @ViewChild(MatSort) sort: MatSort;
+
+  ngAfterViewInit() {
+    this.dataSource = new MatTableDataSource(this.toolUsageData);
+    this.dataSource.sort = this.sort;
+  }
+}
