@@ -1,17 +1,60 @@
-<table mat-table matSort>
-    <ng-container matColumnDef="tool">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Tool</th>
-      <td mat-cell *matCellDef="let usage">{{ usage.tool }}</td>
-    </ng-container>
-    <ng-container matColumnDef="usageHours">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Usage Hours</th>
-      <td mat-cell *matCellDef="let usage">{{ usage.usageHours }}</td>
-    </ng-container>
-    <ng-container matColumnDef="changeOverTime">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Changeover Time</th>
-      <td mat-cell *matCellDef="let usage">{{ usage.changeOverTime }}</td>
-    </ng-container>
-    <tr mat-header-row *matHeaderRowDef="['tool', 'usageHours', 'changeOverTime']"></tr>
-    <tr mat-row *matRowDef="let row; columns: ['tool', 'usageHours', 'changeOverTime']"></tr>
-  </table>
-  
+<table mat-table [dataSource]="toolUsageData" matSort>
+
+  <!-- Tool ID Column -->
+  <ng-container matColumnDef="tool_id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Tool ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.tool_id}} </td>
+  </ng-container>
+
+  <!-- Count Column -->
+  <ng-container matColumnDef="count">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Count </th>
+    <td mat-cell *matCellDef="let element"> {{element.count}} </td>
+  </ng-container>
+
+  <!-- Time Column -->
+  <ng-container matColumnDef="time">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Time </th>
+    <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+  </ng-container>
+
+  <!-- First Column -->
+  <ng-container matColumnDef="first">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> First </th>
+    <td mat-cell *matCellDef="let element"> {{element.first}} </td>
+  </ng-container>
+
+  <!-- Last Column -->
+  <ng-container matColumnDef="last">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Last </th>
+    <td mat-cell *matCellDef="let element"> {{element.last}} </td>
+  </ng-container>
+
+  <!-- cposmin Column -->
+  <ng-container matColumnDef="cposmin">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> cposmin </th>
+    <td mat-cell *matCellDef="let element"> {{element.cposmin}} </td>
+  </ng-container>
+
+  <!-- cposmax Column -->
+  <ng-container matColumnDef="cposmax">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> cposmax </th>
+    <td mat-cell *matCellDef="let element"> {{element.cposmax}} </td>
+  </ng-container>
+
+  <!-- uposmin Column -->
+  <ng-container matColumnDef="uposmin">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> uposmin </th>
+    <td mat-cell *matCellDef="let element"> {{element.uposmin}} </td>
+  </ng-container>
+
+  <!-- uposmax Column -->
+  <ng-container matColumnDef="uposmax">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> uposmax </th>
+    <td mat-cell *matCellDef="let element"> {{element.uposmax}} </td>
+  </ng-container>
+
+  <!-- Columns to be displayed -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

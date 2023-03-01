@@ -16,8 +16,7 @@ export class ToolUsageComponent implements AfterViewInit {
   }
 
   @Input() toolUsageData: any[];
-
-  displayedColumns: string[] = ['tool', 'usage'];
+  displayedColumns: string[] = ['tool_id', 'count', 'time', 'first', 'last', 'cposmin', 'cposmax', 'uposmin', 'uposmax'];
   dataSource: MatTableDataSource<any>;
 
   @ViewChild(MatSort) sort: MatSort;
@@ -26,4 +25,6 @@ export class ToolUsageComponent implements AfterViewInit {
     this.dataSource = new MatTableDataSource(this.toolUsageData);
     this.dataSource.sort = this.sort;
   }
+
+  
 }
