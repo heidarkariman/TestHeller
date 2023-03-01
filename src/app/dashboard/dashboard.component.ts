@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { ToolUsageService } from '../tool-usage.service';
 import { ToolUsage } from '../tool-usage.model';
+import { ToolUsageComponent } from '../tool-usage/tool-usage.component';
+import { DiagramComponent } from '../diagram/diagram.component';
+
 
 @Component({
   selector: 'app-dashboard',

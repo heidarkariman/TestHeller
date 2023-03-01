@@ -11,6 +11,8 @@ import { MatTableDataSource } from '@angular/material/table';
 export class ToolUsageComponent implements AfterViewInit {
   constructor() {
     this.toolUsageData = [];
+    this.dataSource = new MatTableDataSource();
+    this.sort = new MatSort;
   }
 
   @Input() toolUsageData: any[];
