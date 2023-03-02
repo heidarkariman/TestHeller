@@ -7,9 +7,10 @@ import { ToolUsage } from './tool-usage.model';
   providedIn: 'root'
 })
 export class ToolUsageService {
-  private toolUsageUrl = './assets/tool-usage.json';
+  private toolUsageUrl = 'assets/tool-usage.json';
 
   constructor(private http: HttpClient) { }
+
 
   getToolUsage(): Observable<ToolUsage[]> {
     return this.http.get<ToolUsage[]>(this.toolUsageUrl);

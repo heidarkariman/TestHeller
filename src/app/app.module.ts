@@ -8,13 +8,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ToolUsageComponent } from './tool-usage/tool-usage.component';
 import { DiagramComponent } from './diagram/diagram.component';
+import { JsonDataComponent } from './json-data/json-data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     ToolUsageComponent,
-    DiagramComponent
+    DiagramComponent,
+    JsonDataComponent
   ],
   imports: [
     BrowserModule,

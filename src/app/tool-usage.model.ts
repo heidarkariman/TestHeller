@@ -1,7 +1,13 @@
 export class ToolUsage {
    constructor(
-     public id: number = 0,
-     public name: string = '',
-     public usage: number = 0
+     public tool_id :string = '',
+     public count : number = 0,
+     public time : number = 0,
+     public first : string = '',
+     public last : string = '',
+     public cposmin: number = 0,
+     public cposmax: number = 0,
+     public uposmin: number = 0,
+     public uposmax : number = 0,
    ) {}
  }
