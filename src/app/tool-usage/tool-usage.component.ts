@@ -11,25 +11,25 @@ import { ToolUsage } from '../tool-usage.model';
 })
 export class ToolUsageComponent implements OnChanges {
   constructor() {
+    this.toolUsageData = [];
     this.dataSource = new MatTableDataSource();
     this.sort = new MatSort;
-    this._toolUsageData=[];
   }
 
-  private _toolUsageData: ToolUsage[];
-  @Input() set toolUsageData(value: ToolUsage[]) {
-    this._toolUsageData = value;
-    this.dataSource.data = this._toolUsageData;
-    this.dataSource.sort = this.sort;
-  }  displayedColumns: string[] = ['tool_id', 'count', 'time', 'first', 'last', 'cposmin', 'cposmax', 'uposmin', 'uposmax'];
-  dataSource: MatTableDataSource<ToolUsage>;
+  @Input() toolUsageData: any[];
+  displayedColumns: string[] = ['tool_id', 'count', 'time', 'first', 'last', 'cposmin', 'cposmax', 'uposmin', 'uposmax'];
+  dataSource: MatTableDataSource<any>;
 
   @ViewChild(MatSort) sort: MatSort;
 
+  // ngAfterViewInit() {
+  //   this.dataSource = new MatTableDataSource(this.toolUsageData);
+  //   this.dataSource.sort = this.sort;
+  // }
+ 
   ngOnChanges() {
     this.dataSource = new MatTableDataSource(this.toolUsageData);
     this.dataSource.sort = this.sort;
-    console.log(this.toolUsageData);
   }
 
   

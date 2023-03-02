@@ -24,7 +24,7 @@ export class DashboardComponent {
    ngOnInit() {
      this.toolUsageService.getToolUsage().subscribe(data => {
        this.toolUsage = data;
-      //  console.log(this.toolUsage);
+        console.log(this.toolUsage);
      });
    }
 
